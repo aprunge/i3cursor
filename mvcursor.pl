@@ -2,7 +2,7 @@ use Term::TermKey;
 use X11::GUITest qw(MoveMouseAbs);
 use X11::GUITest qw(GetMousePos);
 
-my ($screen_with, $screen_height) = (1920, 1080);
+my ($screen_with, $screen_height) = @ARGV;
 my ($x, $y) = GetMousePos();
 
 my $tk = Term::TermKey->new( \*STDIN );
@@ -31,5 +31,3 @@ for(;;) {
 }
 
 print "You pressed: " . $tk->format_key( $key, 0 );
-
-
